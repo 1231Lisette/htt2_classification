@@ -1,0 +1,10 @@
+# 数据集配置
+path: ./data/data_yolo
+train: train/images
+val: val/images
+test: test/images  # 新增测试集路径
+
+# 类别配置
+nc: 4  # 类别数量
+names: ['控制适应标识', '无螺丝', '有螺丝', '电路板']  # 类别名称映射
+

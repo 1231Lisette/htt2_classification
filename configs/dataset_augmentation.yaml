@@ -1,0 +1,34 @@
+# 数据增强配置
+# 基础增强（在训练时默认启用）
+basic_augmentation:
+  hsv_h: 0.015      # 色调增强
+  hsv_s: 0.7        # 饱和度增强  
+  hsv_v: 0.4        # 明度增强
+  degrees: 0.0      # 旋转角度
+  translate: 0.1    # 平移
+  scale: 0.5        # 缩放
+  shear: 0.0        # 剪切
+  perspective: 0.0  # 透视变换
+  flipud: 0.0       # 上下翻转概率
+  fliplr: 0.5       # 左右翻转概率
+  mosaic: 1.0       # Mosaic数据增强概率
+  mixup: 0.0        # Mixup数据增强概率
+
+# 高级增强（可选）
+advanced_augmentation:
+  enabled: false    # 是否启用高级增强
+  blur: 0.0         # 模糊增强概率
+  noise: 0.0        # 噪声增强概率
+  cutout: 0.0       # Cutout增强概率
+  random_erase: 0.0 # 随机擦除概率
+
+# 多尺度训练
+multi_scale_training:
+  enabled: true
+  min_scale: 0.5    # 最小缩放比例
+  max_scale: 1.5    # 最大缩放比例
+  step: 32          # 尺度步长（必须是32的倍数）
+
+# 验证集增强（通常关闭）
+validation_augmentation:
+  enabled: false

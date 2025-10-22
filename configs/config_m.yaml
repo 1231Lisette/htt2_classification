@@ -1,0 +1,45 @@
+# 训练配置
+train:
+  model: yolov8m.pt
+  epochs: 100
+  patience: 15
+  batch_size: 16
+  img_size: 640
+  device: 0
+  workers: 8
+  lr0: 0.01
+  momentum: 0.937
+  weight_decay: 0.0005
+  save_dir: experiments/runs
+  
+  # 数据增强配置
+  hsv_h: 0.015
+  hsv_s: 0.7
+  hsv_v: 0.4
+  degrees: 0.0
+  translate: 0.1
+  scale: 0.5
+  fliplr: 0.5
+  mosaic: 1.0
+  mixup: 0.1
+
+# 模型配置
+model:
+  nc: 4
+  depth_multiple: 1.0
+  width_multiple: 1.0
+
+# 推理配置
+inference:
+  conf_threshold: 0.5
+  iou_threshold: 0.5
+  max_det: 300
+  visualize: true
+  save_txt: false
+
+# WandB配置
+wandb:
+  enabled: true
+  project: "HT22_ControlBox_Detection"
+  name: "yolov8m_exp1"
+  tags: ["yolov8", "detection", "HT22"]
